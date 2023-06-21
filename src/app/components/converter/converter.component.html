@@ -1,0 +1,27 @@
+<div class="converter">
+  <div class="currency__container">
+    <mat-form-field>
+      <mat-label>Choose currency</mat-label>
+      <mat-select (valueChange)="onChangeBaseCurrency($event)">
+        <mat-option *ngFor="let currency of this.validCurrencies" [value]="currency">{{currency}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form__field">
+      <mat-label>Type value...</mat-label>
+      <input matInput (keyup)="this.onKeyBaseCurrency($event)" [value]="this.baseCurrency" />
+    </mat-form-field>
+
+  </div>
+  <div class="currency__container">
+    <mat-form-field>
+      <mat-label>Choose currency</mat-label>
+      <mat-select (valueChange)="onChangeCurrency($event)">
+        <mat-option *ngFor="let currency of this.validCurrencies" [value]="currency">{{currency}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form__field">
+      <mat-label>Type value...</mat-label>
+      <input matInput (keyup)="this.onKeyCurrency($event)" [value]="this.currency" />
+    </mat-form-field>
+  </div>
+</div>
